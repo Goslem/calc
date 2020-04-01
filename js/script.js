@@ -27,7 +27,7 @@ form.oninput = () => {
     let result = +deposit.value.replace(/[^\d]/g, '');
 
     for (let i = 0; i < year.value * 12 + +month.value; i++) {
-        result += ~~(result / 100 * percent.value) + +replenishment.value;
+        result += ~~(result / 100 * percent.value / 12) + +replenishment.value;
     }
     
     total.value = result.toLocaleString();
