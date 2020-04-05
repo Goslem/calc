@@ -4,66 +4,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Подсчет процента по вкладу</title>
+    <title>Расчет дохода с инвестиций</title>
+    <link rel="shortcut icon" type="image/svg" href="img/favicon.svg">
 
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/calculator.css">
+
+    <script defer src="js/calculator.js"></script>
 </head>
 
 <body>
 
-<main class="main">
-
-    <article class="calc">
+<article class="calc">
+    <header class="calc__header">
         <p class="calc__logo">Made by Goslem</p>
+    </header>
+
+    <section class="calc__info">
         <h1 class="calc__title">Калькулятор</h1>
         <p class="calc__description">Рассчитать доход с инвестиций</p>
+    </section>
 
-        <form class="calc__form">
+    <form class="calc__form" name="calc">
+        <div class="calc__inner">
+            <input type="tel" name="deposit" id="deposit" class="calc__input" maxlength="19" autocomplete="off" autofocus title="Используйте числа в диапозоне от 0 до 999 999 999 999 999" placeholder="&nbsp;">
+            <label for="deposit" class="calc__label">Сумма депозита</label>
+        </div>
 
-            <div class="calc__inner calc__inner-deposit">
-                <input required placeholder=" " autocomplete="off" autofocus id="deposit" class="calc__input" pattern="[0-9\s]{0,10}" title="Используйте цифры в диапозоне от 0 до 99 999 999">
-                <label for="deposit" class="calc__label">Сумма депозита</label>
-            </div>
-
-            <div class="calc__inner calc__inner-percent">
-                <input type="number" min="0" step="0.01" max="100.00" required placeholder=" " autocomplete="off" id="percent" class="calc__input" title="Используйте цифры в диапозоне от 0 до 100">
-                <label for="deposit" class="calc__label">Процент</label>
+        <div class="calc__group">
+            <div class="calc__inner">
+                <input type="tel" name="percent" id="percent" class="calc__input" maxlength="5" autocomplete="off" title="Используйте цифры в диапозоне от 0 до 99.99" placeholder="&nbsp;">
+                <label for="percent" class="calc__label">Процент</label>
                 <span class="calc__label-percent">%</span>
             </div>
 
-            <div class="calc__inner calc__inner-replenishment">
-                <input required placeholder=" " autocomplete="off" pattern="[0-9\s]{0,10}" id="replenishment" class="calc__input" title="Используйте цифры в диапозоне от 0 до 99 999 999">
+            <div class="calc__inner">
+                <input type="tel" name="replenishment" id="replenishment" class="calc__input" maxlength="19" autocomplete="off"  title="Используйте числа в диапозоне от 0 до 999 999 999 999 999" placeholder="&nbsp;">
                 <label for="replenishment" class="calc__label">Пополнение</label>
             </div>
 
-            <div class="calc__inner calc__inner-year">
-                <input type="number" min="0" step="1" max="100" required placeholder=" " autocomplete="off" id="year" class="calc__input" title="Используйте цифры в диапозоне от 0 до 100">
-                <label for="year" class="calc__label">Срок (лет)</label>
+            <div class="calc__inner">
+                <input type="tel" name="years" id="years" class="calc__input" maxlength="2" autocomplete="off"  title="Используйте цифры в диапозоне от 0 до 99" placeholder="&nbsp;">
+                <label for="years" class="calc__label">Срок (лет)</label>
             </div>
-
-            <div class="calc__inner calc__inner-month">
-                <input type="number" min="0" step="1" max="12" required placeholder=" " autocomplete="off"  id="month" class="calc__input" title="Используйте цифры в диапозоне от 0 до 12">
-                <label for="month" class="calc__label">Срок (месяцев)</label>
+    
+            <div class="calc__inner">
+                <input type="tel" name="months" id="months" class="calc__input" maxlength="2" autocomplete="off" title="Используйте цифры в диапозоне от 0 до 11" placeholder="&nbsp;">
+                <label for="months" class="calc__label">Срок (месяцев)</label>
             </div>
+        </div>
 
-            <div class="calc__inner calc__inner-capitalization">
-                <input type="checkbox" required id="capitalization" class="calc__checkbox">
-                <div class="calc__checkbox-span"><div class="calc__check"></div></div>
-                <label for="capitalization" class="calc__label-checkbox">Капитализация</label>
-            </div>
+        <div class="calc__inner">
+            <input type="checkbox" name="capitalization" id="capitalization" class="calc__checkbox" required>
+            <label for="capitalization" class="calc__checkbox-label" title="Начисление процентов на проценты">Капитализация</label>
+        </div>
 
-            <div class="calc__inner calc__inner-total">
-                <input required placeholder=" " autocomplete="off" pattern="[0-9\s]{0,10}" id="total" class="calc__input" title="Используйте цифры в диапозоне от 0 до 99 999 999">
-                <label for="total" class="calc__label">Итог</label>
-            </div>
+        <div class="calc__inner">
+            <input type="tel" name="total" id="total" class="calc__input" maxlength="19" autocomplete="off" title="Используйте числа в диапозоне от 0 до 999 999 999 999 999" placeholder="&nbsp;">
+            <label for="total" class="calc__label">Итог</label>
+        </div>
+    </form>
+</article>
 
-        </form>
-    </article>
-
-</main>
-
-<script src="js/script.js" defer></script>
- 
 </body>
 </html>
